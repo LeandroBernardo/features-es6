@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promisses example</title>
+</head>
+
+<body>
+
+    <script>
+        var githubUser = fetch('https://api.github.com/users')
+
+        githubUser
+            .then(data => data.json())
+            .then(data => data.map(user => {
+                console.log(user.avatar_url)
+            }))
+            .catch(error => console.log(error))
+
+    </script>
+
+</body>
+
+</html>
